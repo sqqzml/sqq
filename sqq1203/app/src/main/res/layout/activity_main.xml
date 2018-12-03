@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+<com.example.asus.sqq1203.view.TitleView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/title"></com.example.asus.sqq1203.view.TitleView>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="最近搜索"
+        android:id="@+id/zuijin"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="删除"
+        android:paddingRight="20dp"
+        android:id="@+id/del"/>
+    <com.example.asus.sqq1203.view.FlowView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/history_flowView"></com.example.asus.sqq1203.view.FlowView>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="搜索发现"
+    android:layout_below="@id/del"
+    android:layout_marginLeft="10dp"
+   />
+<com.example.asus.sqq1203.view.FlowView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/flowView"
+    ></com.example.asus.sqq1203.view.FlowView>
+</RelativeLayout>
+</LinearLayout>
