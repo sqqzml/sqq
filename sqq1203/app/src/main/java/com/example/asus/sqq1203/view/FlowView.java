@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,15 +14,15 @@ import java.util.ArrayList;
 
 public class FlowView extends LinearLayout {
     //初始化画笔
-    private int mscreen_width=0;
+    private int mscreenwidth;
     private Paint mPaint;
 
     public FlowView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        mscreenwidth = metrics.widthPixels;
+        setOrientation(VERTICAL);
     }
-
-
     //测量
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -33,7 +34,6 @@ public class FlowView extends LinearLayout {
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
     }
-
     //绘制
     @Override
     protected void onDraw(Canvas canvas) {
@@ -64,7 +64,7 @@ public class FlowView extends LinearLayout {
             int dataLength = getPaddingRight() + getPaddingLeft() + getMeasuredWidth();
 
             //将数据添加到TextView中
-            if (mscreen_width>numlenth+dataLength){
+            if (mscreenwidth>=numlenth+dataLength){
             lin.addView(text);
             }
             else{

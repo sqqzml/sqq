@@ -36,15 +36,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (mHistory!=null){
         history_flowView.setData(mList);
         }
-
     }
-
     private void initData() {
         for (int i = 0; i <data.length ; i++) {
            mList.add(data[i]);
         }
     }
-
     private void initView() {
         title = (TitleView) findViewById(R.id.title);
         del = (TextView) findViewById(R.id.del);
@@ -52,8 +49,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         flowView = (FlowView) findViewById(R.id.flowView);
         zuijin = findViewById(R.id.zuijin);
     }
-
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){
