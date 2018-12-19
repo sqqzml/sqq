@@ -2,6 +2,7 @@ package com.example.asus.sqq1203;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String[] data = {"基础护肤", "面部清洁", "面膜", "兰蔻", "雅诗兰黛", "资生堂", "眼部护理", "悦诗风吟", "美容护肤"};
+    private String[] data = {"基础护肤", "面部清洁", "面膜", "兰蔻", "雅诗兰黛", "资生堂", "眼部护理",  "美容护肤"};
     private ArrayList<String> mHistory= new ArrayList<>();
     private ArrayList<String> mList= new ArrayList<>();
     private TitleView title;
@@ -32,33 +33,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initData();
         initView();
         dao = new MyDao(this);
-         mHistory= dao.setName();
-        if (mHistory!=null){
-        history_flowView.setData(mList);
+        mHistory= dao.setName();
+        if (!mHistory.isEmpty()){
+        history_flowView.setData(mHistory);
         }
     }
     private void initData() {
         for (int i = 0; i <data.length ; i++) {
            mList.add(data[i]);
         }
+
     }
     private void initView() {
         title = (TitleView) findViewById(R.id.title);
+        title.getTianjia().setOnClickListener(this);
+
         del = (TextView) findViewById(R.id.del);
+        del.setOnClickListener(this);
+
         history_flowView = (FlowView) findViewById(R.id.history_flowView);
+
         flowView = (FlowView) findViewById(R.id.flowView);
+        flowView.setData(mList);
+
         zuijin = findViewById(R.id.zuijin);
+        zuijin.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             //进行添加的方法
             case R.id.add:
-                String s = title.getSs().trim();
+        String s = title.getSs().trim();
                 mHistory.add(s);
                 history_flowView.removeAllViews();
                 dao.insert(s);
                 history_flowView.setData(mHistory);
+                Toast.makeText(MainActivity.this,"哈哈",Toast.LENGTH_LONG).show();
                 break;
                 //进行删除
             case R.id.del:

@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':mvpdemo', ':androidtest7', ':login', ':week2', ':androidtest8', ':mylibrary', ':exceptionhandling', ':androidtest9', ':mmarquee', ':okhttp', ':okhttputils', ':recycleview', ':androidtest12', ':animator', ':androidtest14', ':week3', ':xrecyclerview', ':xrecy', ':xrecyclerviewLibrary', ':xrecyclerviewLibrary1', ':xrecyclerviewLibrary2'

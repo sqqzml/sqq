@@ -27,21 +27,24 @@
         android:text="删除"
         android:paddingRight="20dp"
         android:id="@+id/del"/>
+</RelativeLayout>
+
     <com.example.asus.sqq1203.view.FlowView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/history_flowView"></com.example.asus.sqq1203.view.FlowView>
-<TextView
+    <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="搜索发现"
     android:layout_below="@id/del"
     android:layout_marginLeft="10dp"
    />
+
 <com.example.asus.sqq1203.view.FlowView
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/flowView"
     ></com.example.asus.sqq1203.view.FlowView>
-</RelativeLayout>
+
 </LinearLayout>
